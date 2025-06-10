@@ -1,0 +1,92 @@
+/* TIPOGRAFÍA PRINCIPAL */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+
+/* IMPORTA COMPONENTES DE ESTRUCTURA */
+@import url(header.css);
+@import url(nav.css);
+@import url(footer.css);
+
+/* IMPORTA SECCIONES DE CONTENIDO */
+@import url(contact-section.css);
+@import url(sticky-buttons.css);
+@import url(category-cards.css);
+@import url(contact-form.css);
+@import url(download-banner.css);
+
+/* ======================= */
+/*       VARIABLES         */
+/* ======================= */
+:root {
+    /* Tipografía */
+    --font-primary: 'Nunito', sans-serif;
+
+    /* Colores base */
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #bcbcbc;
+    --gray-light: #eee;
+    --gray-medium: #ccc;
+    --gray-very-light: #f9f9f9;
+    --gray-border: #ddd;
+    --gray-placeholder: #aaa;
+
+    /* Colores principales */
+    --primary: #ffbc0e;
+    --primary-transparent: rgba(255, 188, 14, 0.5);
+    --background-base: #fff59d;
+    --dark: #1b3039;
+    --light: #eceff1;
+
+    /* Colores púrpura y rosas */
+    --dark-purple: #3c122c;
+    --medium-purple: #762ba3;
+    --light-purple: #ae40f0;
+    --pink: #fc5185;
+    --light-pink: #ffeffe;
+
+    /* Verdes */
+    --dark-green: #008b1c;
+    --light-green: #00b090;
+
+    /* Amarillo */
+    --yellow: #ffc800;
+
+    /* Azules y superposiciones */
+    --blue-light: #e2f1f8;
+    --dark-overlay: rgba(33, 49, 63, 0.95);
+    --black-shadow: rgba(0, 0, 0, 0.2);
+
+    /* Sombras */
+    --shadow-dark: rgba(33, 49, 63, 0.3);
+    --shadow-black-light: rgba(0, 0, 0, 0.15);
+}
+
+/* ======================= */
+/*     ESTILOS GENERALES   */
+/* ======================= */
+/* RESET BÁSICO Y TIPOGRAFÍA GLOBAL */
+* {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO DEL BODY Y CAMPOS DE ENTRADA */
+body,
+input {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--background-base);
+}
+
+/* QUITAR SUBRAYADO DE LOS ENLACES POR DEFECTO */
+a {
+    text-decoration: none;
+}
+
+/* CONTENEDOR GENERAL CON PADDING LATERAL */
+.container {
+    max-width: 1440px;
+    padding: 0 20px;
+}

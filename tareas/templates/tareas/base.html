@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'tareas/img/logos/logo-principal.png' %}" type="image/x-icon">
+
+    <title>{% block title %}Título por defecto{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'tareas/css/styles.css' %}">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="{% static 'tareas/js/nav.js' %}"></script>
+    <script type="text/javascript" src="{% static 'tareas/js/app.js' %}"></script>
+</head>
+
+<body>
+    <!-- Menú -->
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'index' %}"><img src="{% static 'tareas/img/logos/logo-principal.png' %}"
+                    alt="Logo de la marca"></a>
+        </div>
+
+        <!-- Menú Principal -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li class="category">
+                    <a href="#">Categoría
+                        <i class="bi bi-caret-down-fill" id="dropdown-icon"></i>
+                    </a>
+                    <ul class="drop-down">
+                        <li><a href="{% url 'gaseosas' %}">Gaseosas</a></li>
+                        <li><a href="{% url 'aguas' %}">Aguas</a></li>
+                        <li><a href="{% url 'aguas_saborizadas' %}">Aguas Saborizadas</a></li>
+                        <li><a href="{% url 'jugos' %}">Jugos</a></li>
+                        <li><a href="{% url 'energizantes' %}">Energizantes</a></li>
+                        <li><a href="{% url 'bebidas_isotonicas' %}">Bebidas Isotónicas</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'quienes_somos' %}">¿Quiénes Somos?</a></li>
+            </ul>
+        </nav>
+        <a href="{% url 'contactos' %}" class="btn"><button>Contactos</button></a>
+
+        <a onclick="openNav()" class="menu" href="#">
+            <button>
+                <img src="{% static 'tareas/img/icons/menu-icon.svg' %}" alt="Icon de menu">
+            </button>
+        </a>
+
+        <!-- Menú Hamburguesa -->
+        <div class="overlay" id="mobile-menu">
+            <a onclick="closeNav()" class="close" href="">&times;</a>
+            <div class="overlay-content">
+                <a href="{% url 'index' %}">Inicio</a>
+                <li class="category_nav">
+                    <a href="#">Categoría
+                        <i class="bi bi-caret-down-fill" id="dropdown-icon"></i>
+                    </a>
+                    <ul class="drop-down_nav">
+                        <li><a href="{% url 'gaseosas' %}">Gaseosas</a></li>
+                        <li><a href="{% url 'aguas' %}">Aguas</a></li>
+                        <li><a href="{% url 'aguas_saborizadas' %}">Aguas Saborizadas</a></li>
+                        <li><a href="{% url 'jugos' %}">Jugos</a></li>
+                        <li><a href="{% url 'energizantes' %}">Energizantes</a></li>
+                        <li><a href="{% url 'bebidas_isotonicas' %}">Bebidas Isotónicas</a></li>
+                    </ul>
+                </li>
+                <a href="{% url 'quienes_somos' %}">¿Quiénes Somos?</a>
+                <a href="{% url 'contactos' %}" class="btn"><button>Contactos</button></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botones Flotantes -->
+    <section class="sticly-social-container">
+        <article class="sticly-social">
+            <a href="#" target="_blank">
+                <p>WhatsApp</p>
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </article>
+    </section>
+
+    <main>
+        {% block content %}
+        <!-- Acá va el contenido de cada página -->
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <section class="footer_sections">
+            <div class="footer_sections-container container">
+
+                <!-- Article de Datos de contacto -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Datos De Contactos</h3>
+                    <ul class="footer_section-table">
+                        <li class="footer_section-links">
+                            <svg class="svg-inline--fa fa-lg svg-text-fill m-right-quarter" viewBox="0 0 1792 1792"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1152 640q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm256 0q0 109-33 179l-364 774q-16 33-47.5 52t-67.5 19-67.5-19-46.5-52l-365-774q-33-70-33-179 0-212 150-362t362-150 362 150 150 362z">
+                                </path>
+                            </svg>
+                            <a href="{% url 'contactos' %}" class="footer_section-link">Zavaleta 204 - Parque
+                                Patricios</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <svg class="svg-inline--fa fa-lg svg-text-fill m-right-quarter" viewBox="0 0 1792 1792"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1600 1240q0 27-10 70.5t-21 68.5q-21 50-122 106-94 51-186 51-27 0-53-3.5t-57.5-12.5-47-14.5-55.5-20.5-49-18q-98-35-175-83-127-79-264-216t-216-264q-48-77-83-175-3-9-18-49t-20.5-55.5-14.5-47-12.5-57.5-3.5-53q0-92 51-186 56-101 106-122 25-11 68.5-21t70.5-10q14 0 21 3 18 6 53 76 11 19 30 54t35 63.5 31 53.5q3 4 17.5 25t21.5 35.5 7 28.5q0 20-28.5 50t-62 55-62 53-28.5 46q0 9 5 22.5t8.5 20.5 14 24 11.5 19q76 137 174 235t235 174q2 1 19 11.5t24 14 20.5 8.5 22.5 5q18 0 46-28.5t53-62 55-62 50-28.5q14 0 28.5 7t35.5 21.5 25 17.5q25 15 53.5 31t63.5 35 54 30q70 35 76 53 3 7 3 21z">
+                                </path>
+                            </svg>
+                            <a href="{% url 'contactos' %}" class="footer_section-link">(11) 1234-5678</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <svg class="svg-inline--fa fa-lg svg-text-fill m-right-quarter"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+                                </path>
+                            </svg>
+                            <a href="{% url 'contactos' %}" class="footer_section-link">contacto@distribuidora.com</a>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Article de Categoría -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Categoría</h3>
+                    <ul class="footer_section-table">
+                        <li class="footer_section-links">
+                            <a href="{% url 'gaseosas' %}" class="footer_section-link">Gaseosas</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <a href="{% url 'aguas' %}" class="footer_section-link">Aguas</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <a href="{% url 'aguas_saborizadas' %}" class="footer_section-link">Aguas Saborizadas</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <a href="{% url 'jugos' %}" class="footer_section-link">Jugos</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <a href="{% url 'energizantes' %}" class="footer_section-link">Energizantes</a>
+                        </li>
+                        <li class="footer_section-links">
+                            <a href="{% url 'bebidas_isotonicas' %}" class="footer_section-link">Bebidas Isotónicas</a>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Article de redes -->
+                <article class="footer_section">
+                    <h3 class="footer_section-title">Siguenos</h3>
+                    <div class="social_container">
+                        <a href="#" class="social_icon">
+                            <img src="{% static 'tareas/img/icons/facebook.svg' %}" alt="Icon de facebook">
+                        </a>
+                        <a href="#" class="social_icon">
+                            <img src="{% static 'tareas/img/icons/instagram.svg' %}" alt="Icon de instagram">
+                        </a>
+                        <a href="#" class="social_icon">
+                            <img src="{% static 'tareas/img/icons/twitter-x.svg' %}" alt="Icon de twitter-x">
+                        </a>
+                        <a href="#" class="social_icon">
+                            <img src="{% static 'tareas/img/icons/linkedin.svg' %}" alt="Icon de linkedin">
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section de Copyright -->
+        <section class="footer_copy">
+            <p class="footer_copy-text" id="Copyright">
+                Copyright &copy
+                <span id="current-year"></span>
+                Todos los derechos reservedos. By
+                <a href="#" target="_blank" class="footer_copy-link">José Espinola</a>
+            </p>
+        </section>
+    </footer>
+</body>
+
+</html>

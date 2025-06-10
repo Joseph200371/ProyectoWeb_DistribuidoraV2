@@ -1,0 +1,85 @@
+{% extends 'tareas/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block title %}Inicio - Distribuidora{% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <section class="banner-descarga-custom">
+        <h2>CLICK PARA <span>DESCARGAR PRECIOS</span></h2>
+        <a href="" class="btn-descargar" download>
+            <i class="bi bi-download"></i> DESCARGAR
+        </a>
+    </section>
+
+    <!-- Tarjetas de Categoría -->
+    <!-- Aguas Mineral, Aguas Saborizadas, Jugos, Energizantes, Bebidas Isotónicas, Gaseosas -->
+    <section class="category_container">
+
+        <div class="category_cards-container">
+            <div class="category_cards-title">
+                <h2>Categorías</h2>
+            </div>
+        </div>
+
+        <div class="category_cards">
+
+            <article class="card">
+                <a href="{% url 'gaseosas' %}">
+                    <img src="{% static 'tareas/img/category-cards/gaseosas.svg' %}" alt="Botella de Gaseosas"
+                        class="card-img">
+                    <h4>Gaseosas</h4>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="{% url 'aguas' %}">
+                    <img src="{% static 'tareas/img/category-cards/aguas.jpg' %}" alt="Botella de agua mineral"
+                        class="card-img">
+                    <h4>Aguas Mineral</h4>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="{% url 'aguas_saborizadas' %}">
+                    <img src="{% static 'tareas/img/category-cards/aguas-saborizdas.jpg' %}" alt="Botella de aguas saborizadas"
+                        class="card-img">
+                    <h4>Aguas Saborizadas</h4>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="{% url 'jugos' %}">
+                    <img src="{% static 'tareas/img/category-cards/jugos.jpg' %}" alt="Botella de Jugos" class="card-img">
+                    <h4>Jugos</h4>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="{% url 'energizantes' %}">
+                    <img src="{% static 'tareas/img/category-cards/energizante.svg' %}" alt="Lata de Energizantes"
+                        class="card-img">
+                    <h4>Energizantes</h4>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="{% url 'bebidas_isotonicas' %}">
+                    <img src="{% static 'tareas/img/category-cards/bebidas-isotonicas.jpg' %}"
+                        alt="Botella de Bebidas Isotónicas" class="card-img">
+                    <h4>Bebidas Isotónicas</h4>
+                </a>
+            </article>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+
+</html>

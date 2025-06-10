@@ -1,0 +1,124 @@
+@import url(styles.css);
+
+/* LINKS GENERALES EN HEADER */
+.header a {
+    text-decoration: none;
+}
+
+/* OVERLAY MENU */
+.header .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-overlay);
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+/* CONTENIDO DEL OVERLAY */
+.header .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+/* ENLACES DEL OVERLAY */
+.header .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--light);
+    display: block;
+    text-align: center;
+    transition: color 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.header .overlay a:hover,
+.header .overlay a:focus {
+    color: var(--primary);
+}
+
+/* BOTÓN PARA CERRAR EL OVERLAY */
+.header .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+/* LISTA GENERAL */
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* SUBMENÚ (DROP-DOWN) DENTRO DEL OVERLAY */
+.drop-down_nav {
+    display: none;
+    position: relative;
+    padding: 0.3rem 0.75rem;
+    margin: 0.5rem 0;
+    background: var(--dark);
+    box-shadow: 0 4px 12px var(--black);
+    min-width: 160px;
+}
+
+.header .overlay .drop-down_nav li a {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.drop-down_nav li a {
+    padding: 8px 12px;
+    font-size: 16px !important;
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* CATEGORÍA CON ICONO DE FLECHA */
+.category_nav {
+    position: relative;
+}
+
+.category_nav:hover .drop-down_nav {
+    display: block;
+}
+
+.category_nav a {
+    display: flex;
+    align-items: center;
+}
+
+.category_nav i {
+    font-size: 1rem;
+    margin-left: 5px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.category_nav:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* RESPONSIVE */
+@media screen and (min-height: 800px) {
+    .header .overlay a {
+        font-size: 20px;
+    }
+
+    .header .overlay .close {
+        font-size: 20px;
+        top: 15px;
+        right: 35px;
+    }
+}

@@ -1,0 +1,47 @@
+aguas:
+Villavicencio con gas 1,5lts x6un
+Villavicencio con gas 500ml x12un
+Villavicencio con gas 1,5lts x6un
+Villavicencio 500ml x12un
+Villamanaos 600ml x 12un
+Soda Manaos 2lts x6un
+
+Aguas Saborizadas:
+Aquarius Manzana 1.5lts x6un
+Aquarius Manzana 500ml x6un
+Aquarius Naranja 1.5lts x6un
+Levite Naranja 1.5lts x6un
+Levite Pera 1.5lts x6un
+Levite Pomelo 1.5lts x6un
+
+Bebidas Isotónicas:
+Gatorade Blue 500ml x6un
+Gatorade Manzana 500ml x6un
+Gatorade Rojo 500ml x6un
+Powerade Blue 500ml x6un
+Powerade Manzana 500ml x6un
+Powerade Frutas tropicales Rojo 500ml x6un
+
+Energizante:
+Monster Blanco Sin azúcar 473ml x6un
+Monster Negro 473ml x6un
+Speed 250ml x24un
+Speed 473ml x12un
+Red Bull 250ml x24un
+Red bull Sin Azúcar 250ml x24un
+
+Gaseosas:
+Coca Cola 2.25lts x8un
+Coca Cola Cero 1.75lts x8un
+Coca Cola Lata 354cc x6un
+Pepsi 1.5lts x6un
+Pepsi Black 1.5lts x6un
+Pepsi Black Lata 354ml x6un
+
+Jugos:
+Baggio Manzana 1lts x8un
+Baggio Naranja 1lts x8un
+Baggio Manzana 200ml x18un
+Baggio Naranja 200ml x18un
+
+

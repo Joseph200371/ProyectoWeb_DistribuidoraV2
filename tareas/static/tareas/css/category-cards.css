@@ -1,0 +1,68 @@
+@import url(styles.css);
+
+/* TÍTULO DE LA SECCIÓN */
+.category_cards-title {
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.category_cards-title h2 {
+    font-size: 3rem;
+    color: var(--dark-purple);
+    background-color: var(--blue-light);
+    padding: 10px 20px;
+    font-weight: 800;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.category_cards {
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* TARJETA INDIVIDUAL */
+.card {
+    width: 100%;
+    max-width: 320px;
+    background-color: var(--white);
+    border: 1px solid var(--dark-purple);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEN */
+.card-img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* TÍTULO DE LA TARJETA */
+.card h4 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: var(--dark-purple);
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 850px) {
+    .category_cards-title h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
