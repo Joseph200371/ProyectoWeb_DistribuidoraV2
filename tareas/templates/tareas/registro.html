@@ -1,0 +1,75 @@
+{% extends 'tareas/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Registrarse{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <!-- formulario de Registro -->
+    <section class="form_in">
+        <div class="formulario_registro">
+            <h2>Registrarse</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                <div class="registro_form-error">{{ error }}</div>
+                {% endfor %}
+                {% endif %}
+
+                <label class="registro_form-lbl" for="{{ form.username.id_for_label }}">
+                    {{ form.username.label }}
+                </label>
+                {{ form.username }}
+                {% for error in form.username.errors %}
+                <span class="registro_form-error">{{ error }}</span>
+                {% endfor %}
+
+                <label class="registro_form-lbl" for="{{ form.email.id_for_label }}">
+                    {{ form.email.label }}
+                </label>
+                {{ form.email }}
+                {% for error in form.email.errors %}
+                <span class="registro_form-error">{{ error }}</span>
+                {% endfor %}
+
+                <label class="registro_form-lbl" for="{{ form.password1.id_for_label }}">
+                    {{ form.password1.label }}
+                </label>
+                {{ form.password1 }}
+                {% for error in form.password1.errors %}
+                <span class="registro_form-error">{{ error }}</span>
+                {% endfor %}
+
+                <label class="registro_form-lbl" for="{{ form.password2.id_for_label }}">
+                    {{ form.password2.label }}
+                </label>
+                {{ form.password2 }}
+                {% for error in form.password2.errors %}
+                <span class="registro_form-error">{{ error }}</span>
+                {% endfor %}
+
+                <button type="submit" class="registro_form-btn">Registrarse</button>
+            </form>
+
+            <!-- Para ingresar a login.html -->
+            <div class="login">
+                <a href="{% url 'login' %}">
+                    <button class="login-btn">¿Ya tenés cuenta?</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+
+</html>

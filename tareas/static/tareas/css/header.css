@@ -2,12 +2,18 @@
 
 /* HEADER PRINCIPAL */
 .header {
-    background-color: var(--dark);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+    transition: 0.6s;
+    background-color: var(--dark);
     height: 85px;
-    padding: 5px 10%;
 }
 
 .header .logo {
@@ -112,7 +118,7 @@
 }
 
 .drop-down a:hover {
-    color: var(--dark);
+    color: var(--primary);
 }
 
 /* ÍCONO FLECHA EN DROP-DOWN */

@@ -1,0 +1,274 @@
+@import url(styles.css);
+
+.container-profile {
+    display: flex;
+    margin: 50px 10px;
+}
+
+.profile {
+    flex: 1;
+    margin-right: 10px;
+    background-color: var(--white);
+    box-shadow: var(--black) 0 1px 4px;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.profile-text-container {
+    margin-top: 4px;
+    line-height: normal;
+}
+
+.profile-title {
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.profile-email {
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin: 0.2rem 0 0 0;
+}
+
+.menu-profile {
+    margin: 0 20px;
+}
+
+.menu-link {
+    display: block;
+    text-decoration: none;
+    color: var(--gray);
+    font-family: var(--font-secondary);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+.menu-link:first-child {
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+.menu-link:hover {
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+.menu-link:first-child:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.account {
+    flex: 2;
+    margin-left: 10px;
+    background-color: var(--white);
+    box-shadow: var(--black) 0px 1px 4px;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.account-title {
+    font-family: var(--font-secondary);
+    font-size: 35px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+/* BOTONES DE CANCELAR - GUARGAR - ELIMINAR */
+
+.btn-account {
+    margin-right: 5px;
+}
+
+.btn-detele {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+    text-decoration: none;
+    background: none;
+    color: var(--gray);
+    font-family: var(--font-secondary);
+    text-align: left;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-detele:hover {
+    background-color: var(--red);
+    color: var(--black);
+}
+
+.btn-save {
+    width: 8em;
+    height: 3em;
+    cursor: pointer;
+    border: 1px solid var(--black);
+    border-radius: 2em;
+    color: var(--white);
+    font-weight: bold;
+    margin-left: 5px;
+    background-color: var(--blue);
+    transition-duration: 0.3s;
+    box-shadow: var(--black-shadow);
+}
+
+.btn-save:hover {
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+
+/* Fondo oscuro para modal */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-shadow);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: var(--white);
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 4px 15px var(--black-shadow);
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-cancel, .btn-confirm {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.btn-cancel:hover {
+  background-color: var(--gray-medium);
+}
+
+.btn-confirm {
+  background-color: #d9534f; /* rojo */
+  color: var(--white);
+}
+
+.btn-confirm:hover {
+  background-color: var(--dark-green);
+}
+
+/*  */
+.account-edit {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.input-container label {
+    font-family: var(--font-secondary);
+    color: var(--black);
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.input-container input {
+    font-family: var(--font-secondary);
+    height: 25px;
+    border: 1.5px solid var(--gray);
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--gray);
+    background-color: var(--white);
+}
+
+.input-container input:focus {
+    outline: none;
+    border: 1.5px solid var(--blue);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .container-profile {
+        flex-direction: column;
+    }
+
+    .profile {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .account {
+        margin: 0;
+    }
+
+    .account-header {
+        flex-direction: column;
+    }
+
+    .account-edit {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .input-container {
+        margin: 10px;
+    }
+
+    .input-container input {
+        margin-right: 10px;
+    }
+
+    .btn-save {
+        font-size: 15px;
+    }
+}

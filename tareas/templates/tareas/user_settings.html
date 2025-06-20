@@ -1,0 +1,102 @@
+{% extends 'tareas/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Configuración de cuenta{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <!-- Configuración de cuenta -->
+    <section class="container-profile">
+        <!-- Menú principal de configuración -->
+        <div class="profile">
+            <div class="profile-header">
+                <div class="profile-text-container">
+                    <h1 class="profile-title" for="id_username">{{ form.username.value }}</h1>
+                </div>
+                <p class="profile-email">{{ form.email.value }}</p>
+            </div>
+            <div class="menu-profile">
+                <a href="#" class="menu-link"><i class="bi bi-person-circle menu-icon"></i>Mi perfil</a>
+                <!--<a href="#" class="menu-link"><i class="bi bi-gear-fill menu-icon"></i>Configuración general</a>-->
+                <a href="{% url 'logout' %}" class="menu-link"><i class="bi bi-box-arrow-right menu-icon"></i>Cerrar
+                    sesión</a>
+
+                <!-- Para eliminar la cuenta en la Bases de Datos -->
+                <form id="form-eliminar" action="{% url 'eliminar_cuenta' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="button" id="btn-eliminar" class="btn-detele">
+                        <i class="bi bi-trash-fill menu-icon"></i>Eliminar mi cuenta
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal-confirm" class="modal">
+            <div class="modal-content">
+                <h3>¿Estás seguro que querés eliminar tu cuenta?</h3>
+                <p>Esta acción no se puede deshacer.</p>
+                <div class="modal-buttons">
+                    <button id="cancel-btn" class="btn-cancel">Cancelar</button>
+                    <button id="confirm-btn" class="btn-confirm">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de edición -->
+        <form method="POST" action="" class="account">
+            {% csrf_token %}
+            <div class="account-header">
+                <h1 class="account-title">Configuración de cuenta</h1>
+                <div class="btn-account">
+                    <button type="submit" class="btn-save">Guardar</button>
+                </div>
+            </div>
+
+            <!-- Nombre de usuario - Correo electrónico -->
+            <div class="account-edit">
+                <div class="input-container">
+                    <label for="id_username">Nombre de usuario</label>
+                    {{ form.username }}
+                </div>
+                <div class="input-container">
+                    <label for="id_email">Correo electrónico</label>
+                    {{ form.email }}
+                </div>
+            </div>
+
+            <!-- Nombre completo -->
+            <div class="account-edit">
+                <div class="input-container">
+                    <label for="id_first_name">Nombre(s)</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="input-container">
+                    <label for="id_last_name">Apellido(s)</label>
+                    {{ form.last_name }}
+                </div>
+            </div>
+
+            <!-- Cambiar contraseña -->
+            <div class="account-edit">
+                <div class="input-container">
+                    <label for="id_password1">Nueva contraseña</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="input-container">
+                    <label for="id_password2">Confirmar nueva contraseña</label>
+                    {{ form.password2 }}
+                </div>
+            </div>
+        </form>
+    </section>
+    {% endblock %}
+</body>
+
+</html>

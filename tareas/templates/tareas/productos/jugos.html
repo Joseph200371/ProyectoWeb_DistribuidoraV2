@@ -12,7 +12,26 @@
 
 <body>
     {% block content %}
-    <h1>Jugos</h1>
+    <!-- Tarjetas de Jugos -->
+    <section class="category_container">
+
+        <div class="category_cards-container">
+            <div class="category_cards-title">
+                <h2>Jugos</h2>
+            </div>
+        </div>
+
+        <div class="category_cards">
+            {% for producto in productos %}
+            <article class="card">
+                <a href="#">
+                    <img src="{% static producto.imagen %}" alt="{{ producto.alt }}" class="card-img">
+                    <h4>{{ producto.nombre }}</h4>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
     {% endblock %}
 </body>
 

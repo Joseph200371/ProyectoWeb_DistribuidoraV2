@@ -1,0 +1,105 @@
+@import url(styles.css);
+
+/* BANNER DE DESCARGA (PRECIOS DEL PRODUCTOS) */
+.banner-descarga-custom {
+    background: url('../fondo/fondo-botellas.png') repeat;
+    background-size: 50% contain;
+    background-color: var(--black);
+    color: var(--primary);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.banner-descarga-custom h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.banner-descarga-custom span {
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-descargar {
+    background-color: var(--primary);
+    color: var(--black);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-descargar:hover {
+    background-color: var(--yellow);
+}
+
+/* BANNER DE ¿QUIENES SOMOS? */
+.banner-quienes_somos {
+    width: 100%;
+    min-height: 100vh; /* Tamaño de la imagen */
+    background: url(../fondo/banner-quienes_somos.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+/* CONTENIDO ¿QUIENES SOMOS? */
+.banner-quienes_somos h1 {
+    font-family: var(--font-secondary);
+    color: var(--light);
+    font-size: 80px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
+
+.banner-container {
+    background: var(--white);
+    padding: 100px;
+    min-height: 100hv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container .banner-content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-content h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.banner-content p {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.btn-saberMas {
+    font-weight: 700;
+    color: var(--dark);
+    background: var(--primary);
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-saberMas:hover {
+    background-color: var(--dark);
+    color: var(--primary);
+    transform: scale(1.1);
+}

@@ -1,0 +1,42 @@
+{% extends 'tareas/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Iniciar sesión{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <!-- formulario de Login -->
+    <section class="form_in">
+        <div class="formulario_login">
+            <h2 id="inicio_sesion"> Inicio de sesion</h2>
+            <form method="POST">
+                {% csrf_token %}
+
+                <label for="username" class="login_form-lbl">Nombre de usuario</label>
+                <input type="text" name="username" placeholder="Tu nombre de usuario" required class="login_form-text">
+
+                <label for="password" class="login_form-lbl">Contraseña</label>
+                <input type="password" name="password" placeholder="Ingresá tu contraseña" required class="login_form-text">
+
+                <input type="submit" value="Iniciar" class="login_form-btn">
+            </form>
+
+            <!-- Para ingresar a registro.html -->
+            <div class="registrarse">
+                <form action="{% url 'registro' %}" method="get">
+                    <button type="submit" class="registrarse-btn">registrarse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+
+</html>

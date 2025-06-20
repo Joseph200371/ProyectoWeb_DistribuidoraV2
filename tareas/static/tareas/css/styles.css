@@ -1,5 +1,6 @@
 /* TIPOGRAFÍA PRINCIPAL */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;@300;@400;@500;@600;@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;@300;@400;@500;@600;@700;@800&display=swap');
 
 /* IMPORTA COMPONENTES DE ESTRUCTURA */
 @import url(header.css);
@@ -11,7 +12,11 @@
 @import url(sticky-buttons.css);
 @import url(category-cards.css);
 @import url(contact-form.css);
-@import url(download-banner.css);
+@import url(banner.css);
+@import url(user-menu.css);
+@import url(user_settings.css);
+@import url(login.css);
+@import url(registro.css);
 
 /* ======================= */
 /*       VARIABLES         */
@@ -19,16 +24,20 @@
 :root {
     /* Tipografía */
     --font-primary: 'Nunito', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
 
     /* Colores base */
     --black: #000000;
     --white: #ffffff;
-    --gray: #bcbcbc;
-    --gray-light: #eee;
-    --gray-medium: #ccc;
+    --red: #ff0000;
+    --blue: #1100fc;
+    --yellow: #ffc800;
+    --gray: #666666;
+    --gray-light: #eeeeee;
+    --gray-medium: #cccccc;
     --gray-very-light: #f9f9f9;
-    --gray-border: #ddd;
-    --gray-placeholder: #aaa;
+    --gray-border: #dddddd;
+    --gray-placeholder: #aaaaaa;
 
     /* Colores principales */
     --primary: #ffbc0e;
@@ -47,9 +56,6 @@
     /* Verdes */
     --dark-green: #008b1c;
     --light-green: #00b090;
-
-    /* Amarillo */
-    --yellow: #ffc800;
 
     /* Azules y superposiciones */
     --blue-light: #e2f1f8;
@@ -80,6 +86,10 @@ input {
     background-color: var(--background-base);
 }
 
+.main-content {
+    padding-top: 75px;
+}
+
 /* QUITAR SUBRAYADO DE LOS ENLACES POR DEFECTO */
 a {
     text-decoration: none;
@@ -90,3 +100,4 @@ a {
     max-width: 1440px;
     padding: 0 20px;
 }
+

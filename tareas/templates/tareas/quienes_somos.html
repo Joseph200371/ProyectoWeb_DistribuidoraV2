@@ -7,12 +7,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block title %}¿Quiénes Somos? - Distribuidora{% endblock %}
+    <title>{% block title %}¿Quiénes Somos? - Distribuidora{% endblock %}</title>
 </head>
 
 <body>
     {% block content %}
-    <h1>¿Quiénes Somos?</h1>
+    <!-- Banner de ¿Quiénes Somos? -->
+    <section class="banner-quienes_somos">
+        <h1>¿Quiénes Somos?</h1>
+    </section>
+
+    <!--Contenido del Banner-->
+    <section class="banner-container">
+        <div class="banner-content">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Somos una distribuidora comprometida con brindar productos de calidad y un servicio eficiente a cada uno
+                de nuestros clientes.
+                Desde nuestros inicios, nos enfocamos en satisfacer las necesidades del mercado local con una atención
+                personalizada, rápida y confiable.
+            </p>
+            <p>
+                Trabajamos con marcas reconocidas y contamos con un amplio catálogo de bebidas.
+                Nuestro equipo está formado por personas dedicadas y apasionadas por lo que hacen, con el objetivo de
+                construir relaciones duraderas basadas en la confianza.
+            </p>
+            <p>
+                Elegirnos es optar por un servicio serio, ágil y adaptado a las exigencias actuales del mercado.
+                Seguimos creciendo junto a vos.
+            </p>
+
+            <a href="#" class="btn-saberMas">Saber Mas</a>
+        </div>
+    </section>
     {% endblock %}
 
 </body>

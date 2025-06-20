@@ -1,7 +1,7 @@
 aguas:
 Villavicencio con gas 1,5lts x6un
 Villavicencio con gas 500ml x12un
-Villavicencio con gas 1,5lts x6un
+Villavicencio 1,5lts x6un
 Villavicencio 500ml x12un
 Villamanaos 600ml x 12un
 Soda Manaos 2lts x6un
@@ -43,5 +43,6 @@ Baggio Manzana 1lts x8un
 Baggio Naranja 1lts x8un
 Baggio Manzana 200ml x18un
 Baggio Naranja 200ml x18un
-
+Cepita Naranja 1lts x6un
+Cepita Durazno 1lts x6un
 

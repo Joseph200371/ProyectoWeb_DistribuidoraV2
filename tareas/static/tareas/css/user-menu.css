@@ -1,0 +1,109 @@
+@import url(styles.css);
+
+/* MENÚ DESPLEGABLE DE USUARIO */
+.user-menu {
+    position: relative;
+}
+
+.user-menu a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: red;
+}
+
+.username {
+    font-size: 1rem;
+    margin-left: 5px;
+}
+
+.user-menu i {
+    font-size: 1rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.user-menu:hover i:last-child {
+    transform: rotate(180deg);
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 0;
+    background: var(--dark);
+    box-shadow: 0 4px 12px var(--black);
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.user-dropdown a:hover {
+    transform: scale(1.1);
+    color: var(--primary);
+}
+
+/* LISTA GENERAL */
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* SUBMENÚ (user-dropdown_nav) DENTRO DEL OVERLAY */
+
+.user-dropdown_nav {
+    display: none;
+    position: relative;
+    padding: 0.3rem 0.75rem;
+    margin: 0.5rem 0;
+    background: var(--dark);
+    box-shadow: 0 4px 12px var(--black);
+    min-width: 160px;
+}
+
+.header .overlay .user-dropdown_nav li a {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.user-dropdown_nav li a {
+    padding: 8px 12px;
+    font-size: 16px !important;
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* user-menu_nav CON ICONO DE FLECHA */
+.user-menu_nav {
+    position: relative;
+}
+
+.user-menu_nav:hover .user-dropdown_nav {
+    display: block;
+}
+
+.user-menu_nav a {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu_nav i {
+    font-size: 1rem;
+    margin-left: 5px;
+}

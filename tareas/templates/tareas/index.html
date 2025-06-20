@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block title %}Inicio - Distribuidora{% endblock %}
+    <title>{% block title %}Inicio - Distribuidora{% endblock %}</title>
 </head>
 
 <body>
@@ -49,15 +49,16 @@
 
             <article class="card">
                 <a href="{% url 'aguas_saborizadas' %}">
-                    <img src="{% static 'tareas/img/category-cards/aguas-saborizdas.jpg' %}" alt="Botella de aguas saborizadas"
-                        class="card-img">
+                    <img src="{% static 'tareas/img/category-cards/aguas-saborizdas.jpg' %}"
+                        alt="Botella de aguas saborizadas" class="card-img">
                     <h4>Aguas Saborizadas</h4>
                 </a>
             </article>
 
             <article class="card">
                 <a href="{% url 'jugos' %}">
-                    <img src="{% static 'tareas/img/category-cards/jugos.jpg' %}" alt="Botella de Jugos" class="card-img">
+                    <img src="{% static 'tareas/img/category-cards/jugos.jpg' %}" alt="Botella de Jugos"
+                        class="card-img">
                     <h4>Jugos</h4>
                 </a>
             </article>

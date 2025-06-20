@@ -16,14 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'tareas/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'tareas/css/styles.css' %}?v={{ timestamp }}">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- JS -->
     <script type="text/javascript" src="{% static 'tareas/js/nav.js' %}"></script>
-    <script type="text/javascript" src="{% static 'tareas/js/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'tareas/js/footer_copy.js' %}"></script>
+    <script type="text/javascript" src="{% static 'tareas/js/modal.js' %}"></script>
 </head>
 
 <body>
@@ -44,17 +45,39 @@
                     </a>
                     <ul class="drop-down">
                         <li><a href="{% url 'gaseosas' %}">Gaseosas</a></li>
-                        <li><a href="{% url 'aguas' %}">Aguas</a></li>
+                        <hr style="margin: 0.3rem 0;">
+                        <li><a href="{% url 'aguas' %}">Aguas Mineral</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'aguas_saborizadas' %}">Aguas Saborizadas</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'jugos' %}">Jugos</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'energizantes' %}">Energizantes</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'bebidas_isotonicas' %}">Bebidas Isotónicas</a></li>
                     </ul>
                 </li>
                 <li><a href="{% url 'quienes_somos' %}">¿Quiénes Somos?</a></li>
+                <a href="{% url 'contactos' %}" class="btn"><button>Contactos</button></a>
+                <li class="user-menu">
+                    <a href="#">
+                        <i class="bi bi-person-fill"></i>
+                        <h1 class="username">{{ user.username }}</h1>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </a>
+                    <div class="user-dropdown">
+                        {% if user.is_authenticated %}
+                        <hr style="margin: 0.3rem 0;">
+                        <a href="{% url 'user_settings' %}">Configuración</a>
+                        <a href="{% url 'logout' %}">Cerrar Sesión</a>
+                        {% else %}
+                        <a href="{% url 'login' %}">Iniciar Sesión</a>
+                        <a href="{% url 'registro' %}">Registrarse</a>
+                        {% endif %}
+                    </div>
+                </li>
             </ul>
         </nav>
-        <a href="{% url 'contactos' %}" class="btn"><button>Contactos</button></a>
 
         <a onclick="openNav()" class="menu" href="#">
             <button>
@@ -73,15 +96,36 @@
                     </a>
                     <ul class="drop-down_nav">
                         <li><a href="{% url 'gaseosas' %}">Gaseosas</a></li>
-                        <li><a href="{% url 'aguas' %}">Aguas</a></li>
+                        <hr style="margin: 0.3rem 0;">
+                        <li><a href="{% url 'aguas' %}">Aguas Mineral</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'aguas_saborizadas' %}">Aguas Saborizadas</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'jugos' %}">Jugos</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'energizantes' %}">Energizantes</a></li>
+                        <hr style="margin: 0.3rem 0;">
                         <li><a href="{% url 'bebidas_isotonicas' %}">Bebidas Isotónicas</a></li>
                     </ul>
                 </li>
                 <a href="{% url 'quienes_somos' %}">¿Quiénes Somos?</a>
                 <a href="{% url 'contactos' %}" class="btn"><button>Contactos</button></a>
+                <li class="user-menu_nav">
+                    <a href="#">
+                        <i class="bi bi-person-fill"></i>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </a>
+                    <ul class="user-dropdown_nav">
+                        {% if user.is_authenticated %}
+                        <hr style="margin: 0.3rem 0;">
+                        <li><a href="{% url 'user_settings' %}">Configuración</a></li>
+                        <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                        <li><a href="{% url 'registro' %}">Registrarse</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
             </div>
         </div>
     </header>
@@ -89,14 +133,14 @@
     <!-- Botones Flotantes -->
     <section class="sticly-social-container">
         <article class="sticly-social">
-            <a href="#" target="_blank">
+            <a href="https://chat.whatsapp.com/GNYcK50oFMNJhSBl9G9Hjh" target="_blank">
                 <p>WhatsApp</p>
                 <i class="bi bi-whatsapp"></i>
             </a>
         </article>
     </section>
 
-    <main>
+    <main class="main-content">
         {% block content %}
         <!-- Acá va el contenido de cada página -->
         {% endblock %}
@@ -149,7 +193,7 @@
                             <a href="{% url 'gaseosas' %}" class="footer_section-link">Gaseosas</a>
                         </li>
                         <li class="footer_section-links">
-                            <a href="{% url 'aguas' %}" class="footer_section-link">Aguas</a>
+                            <a href="{% url 'aguas' %}" class="footer_section-link">Aguas Mineral</a>
                         </li>
                         <li class="footer_section-links">
                             <a href="{% url 'aguas_saborizadas' %}" class="footer_section-link">Aguas Saborizadas</a>

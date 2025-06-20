@@ -6,69 +6,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    {% block title %}Aguas{% endblock %}
+
+    {% block title %}Aguas Mineral{% endblock %}
 </head>
 
 <body>
     {% block content %}
-    <!-- Tarjetas de Aguas -->
+    <!-- Tarjetas de Aguas Mineral -->
     <section class="category_container">
 
         <div class="category_cards-container">
             <div class="category_cards-title">
-                <h2>Aguas</h2>
+                <h2>Aguas Mineral</h2>
             </div>
         </div>
 
         <div class="category_cards">
-
+            {% for producto in productos %}
             <article class="card">
                 <a href="#">
-                    <img src="{% static 'tareas/img/category-cards/aguas.jpg' %}" alt="Botella de agua mineral"
-                        class="card-img">
-                    <h4>Villavicencio con gas 500cc x12un</h4>
+                    <img src="{% static producto.imagen %}" alt="{{ producto.alt }}" class="card-img">
+                    <h4>{{ producto.nombre }}</h4>
                 </a>
             </article>
-
-            <article class="card">
-                <a href="#">
-                    <img src="{% static 'tareas/img/category-cards/aguas-saborizdas.jpg' %}" alt="Botella de agua mineral"
-                        class="card-img">
-                    <h4>Aguas Saborizadas</h4>
-                </a>
-            </article>
-
-            <article class="card">
-                <a href="#">
-                    <img src="{% static 'tareas/img/category-cards/jugos.jpg' %}" alt="Botella de agua mineral" class="card-img">
-                    <h4>Jugos</h4>
-                </a>
-            </article>
-
-            <article class="card">
-                <a href="#">
-                    <img src="{% static 'tareas/img/category-cards/energizante.svg' %}" alt="Botella de agua mineral"
-                        class="card-img">
-                    <h4>Energizantes</h4>
-                </a>
-            </article>
-
-            <article class="card">
-                <a href="#">
-                    <img src="{% static 'tareas/img/category-cards/bebidas-isotonicas.jpg' %}"
-                        alt="Botella de agua mineral" class="card-img">
-                    <h4>Bebidas Isotónicas</h4>
-                </a>
-            </article>
-
-            <article class="card">
-                <a href="#">
-                    <img src="{% static 'tareas/img/category-cards/gaseosas.svg' %}" alt="Botella de agua mineral"
-                        class="card-img">
-                    <h4>Gaseosas</h4>
-                </a>
-            </article>
+            {% endfor %}
         </div>
     </section>
     {% endblock %}
